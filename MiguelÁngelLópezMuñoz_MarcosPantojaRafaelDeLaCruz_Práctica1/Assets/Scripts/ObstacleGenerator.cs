@@ -15,6 +15,8 @@ public class ObstacleGenerator : MonoBehaviour
     /// </summary>
     [SerializeField]
     private Transform _spawnTransform;
+
+    private SpawnPointsComponent _mySpawnPointsComponent;
     #endregion
     #region paramaters
     /// <summary>
@@ -48,7 +50,10 @@ public class ObstacleGenerator : MonoBehaviour
     }
     #endregion
     // Update is called once per frame
-
+    private void Start()
+    {
+        _mySpawnPointsComponent = GetComponent<SpawnPointsComponent>();
+    }
     void Update()
     {
         int _myRandomObstacle = Random.Range(0, _prefabs.Length);
@@ -56,8 +61,9 @@ public class ObstacleGenerator : MonoBehaviour
         if (_elapsedTime >= _nextSpawnTime)
         {
             Instantiate(_prefabs[_myRandomObstacle], _spawnTransform.position, Quaternion.identity);
-            _nextSpawnTime = Random.Range(_minTimeInterval, _maxTimeInterval + 1);
+            _nextSpawnTime = Random.Range(_minTimeInterval, _maxTimeInterval);
             _elapsedTime = 0;
+            _mySpawnPointsComponent.Points();
         }
 
     }

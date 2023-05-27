@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6479722442053402843}
   - component: {fileID: 1387281725452320923}
   - component: {fileID: 3556529342779799647}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PF Village Props - Tree A
   m_TagString: Untagged
   m_Icon: {fileID: 0}

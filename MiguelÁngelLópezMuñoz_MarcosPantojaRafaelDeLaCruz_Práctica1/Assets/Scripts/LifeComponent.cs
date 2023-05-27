@@ -10,6 +10,7 @@ public class LifeComponent : MonoBehaviour
     /// </summary>
     [SerializeField]
     private GameObject _gameManager;
+    
     #endregion
     #region methods
     /// <summary>
@@ -19,9 +20,13 @@ public class LifeComponent : MonoBehaviour
     /// <param name="collision">Colliding element collision</param>
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        GameManager.Instance.OnPlayerDies();
-        //_gameManager.SendMessage("OnPlayerDies");
-        Destroy(gameObject);
+        if(collision.gameObject.GetComponent<PolygonCollider2D>())
+        {
+            GameManager.Instance.OnPlayerDies();
+            //_gameManager.SendMessage("OnPlayerDies");
+            Destroy(gameObject);
+        }
+        
     }
     #endregion
 }

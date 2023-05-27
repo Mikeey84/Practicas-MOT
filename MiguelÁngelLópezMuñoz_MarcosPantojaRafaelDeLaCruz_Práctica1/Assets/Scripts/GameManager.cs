@@ -40,6 +40,7 @@ public class GameManager : MonoBehaviour
             return _isGameRunning;
         }
     }
+    private float _points;
     #endregion
     #region methods
     /// <summary>
@@ -70,6 +71,11 @@ public class GameManager : MonoBehaviour
     {
         _instance = this;
     }
+    public void PointsSum()
+    {
+        _points++;
+        Debug.Log(_points);
+    }
 
 
 
@@ -80,6 +86,8 @@ public class GameManager : MonoBehaviour
         _isGameRunning = true;
         _myInputManager = GetComponent<InputComponent>();
         _obstacleGenerator = GetComponent<ObstacleGenerator>();
+        _points = 0;
+        Debug.Log(_points);
     }
 
     
