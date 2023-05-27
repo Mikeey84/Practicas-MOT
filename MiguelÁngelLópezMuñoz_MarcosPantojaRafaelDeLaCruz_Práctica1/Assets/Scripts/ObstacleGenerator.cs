@@ -53,10 +53,10 @@ public class ObstacleGenerator : MonoBehaviour
     {
         int _myRandomObstacle = Random.Range(0, _prefabs.Length);
         _elapsedTime += Time.deltaTime;
-        _nextSpawnTime = Random.Range(_minTimeInterval, _maxTimeInterval + 1);
         if (_elapsedTime >= _nextSpawnTime)
         {
             Instantiate(_prefabs[_myRandomObstacle], _spawnTransform.position, Quaternion.identity);
+            _nextSpawnTime = Random.Range(_minTimeInterval, _maxTimeInterval + 1);
             _elapsedTime = 0;
         }
 
