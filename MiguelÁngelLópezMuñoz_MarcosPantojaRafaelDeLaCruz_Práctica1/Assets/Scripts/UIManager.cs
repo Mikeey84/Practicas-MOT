@@ -16,7 +16,7 @@ public class UIManager : MonoBehaviour
     /// <summary>
     /// Metrhod callled to activate the GameOver text element
     /// </summary>
-    private void GameOver()
+    public void GameOver()
     {
         _gameOverObject.SetActive(true);
     }

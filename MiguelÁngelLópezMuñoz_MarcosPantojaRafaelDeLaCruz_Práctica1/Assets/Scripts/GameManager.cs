@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
     /// </summary>
     [SerializeField]
     private GameObject _levelManager;
+    private ObstacleGenerator _obstacleGenerator;
     #endregion
     #region properties
     /// <summary>
@@ -44,20 +45,25 @@ public class GameManager : MonoBehaviour
     /// <summary>
     /// Method to send message Jump to player
     /// </summary>
-    private void Jump()
+    public void Jump()
     {
-        _player.SendMessage("Jump");
+        //_player.SendMessage("Jump");
+        _player.GetComponent<MovementComponent>().Jump();
     }
     /// <summary>
     /// Method to manage finalization of the game
     /// </summary>
     private InputComponent _myInputManager;
-    private void OnPlayerDies()
+    public void OnPlayerDies()
     {
-        _isGameRunning = false; 
-        _UIManager.SendMessage("GameOver");
-        _levelManager.SendMessage("GameOver");
-        gameObject.SendMessage("Stop");
+        _isGameRunning = false;
+
+        //_UIManager.SendMessage("GameOver");
+        _UIManager.GetComponent<UIManager>().GameOver();
+        //_levelManager.SendMessage("GameOver");
+        _levelManager.GetComponent<LevelManager>().GameOver();
+        //gameObject.SendMessage("Stop");
+        _obstacleGenerator.Stop();
         _myInputManager.enabled = false;
     }
     public void Awake()
@@ -73,6 +79,7 @@ public class GameManager : MonoBehaviour
     {
         _isGameRunning = true;
         _myInputManager = GetComponent<InputComponent>();
+        _obstacleGenerator = GetComponent<ObstacleGenerator>();
     }
 
     

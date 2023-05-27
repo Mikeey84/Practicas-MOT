@@ -19,7 +19,8 @@ public class LifeComponent : MonoBehaviour
     /// <param name="collision">Colliding element collision</param>
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        _gameManager.SendMessage("OnPlayerDies");
+        GameManager.Instance.OnPlayerDies();
+        //_gameManager.SendMessage("OnPlayerDies");
         Destroy(gameObject);
     }
     #endregion

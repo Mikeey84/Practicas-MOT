@@ -9,7 +9,8 @@ public class InputComponent : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Space))
         {
-            gameObject.SendMessage("Jump");
+            //gameObject.SendMessage("Jump");
+            GameManager.Instance.Jump();
         }
     }
     void stop()

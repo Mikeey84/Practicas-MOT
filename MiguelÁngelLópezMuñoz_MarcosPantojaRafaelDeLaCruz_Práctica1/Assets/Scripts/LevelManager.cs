@@ -10,7 +10,7 @@ public class LevelManager : MonoBehaviour
     /// <summary>
     /// Stops the paralax scrollers
     /// </summary>
-    private void GameOver()
+    public void GameOver()
     {
         for(int i = 0; i < 6; i++)
         {

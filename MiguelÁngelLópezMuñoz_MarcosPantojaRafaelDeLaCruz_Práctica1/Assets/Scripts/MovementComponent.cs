@@ -25,7 +25,7 @@ public class MovementComponent : MonoBehaviour
     /// </summary>
 
     
-    void Jump()
+    public void Jump()
     {
         _myRigidBody2D.velocity = new Vector2(0, _jumpForce);
     }   

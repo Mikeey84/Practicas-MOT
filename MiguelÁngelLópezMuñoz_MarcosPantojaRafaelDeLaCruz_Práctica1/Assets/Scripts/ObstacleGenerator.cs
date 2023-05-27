@@ -42,7 +42,7 @@ public class ObstacleGenerator : MonoBehaviour
     /// <summary>
     /// Method to disable the script and thus stop obsctacles generation
     /// </summary>
-    private void Stop()
+    public void Stop()
     {
         this.enabled = false;
     }
