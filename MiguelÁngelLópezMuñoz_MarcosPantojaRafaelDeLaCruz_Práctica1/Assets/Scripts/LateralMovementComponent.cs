@@ -22,15 +22,18 @@ public class LateralMovementComponent : MonoBehaviour
     private GameManager _gameManager;
     #endregion
     // Start is called before the first frame update
+
     void Start()
     {
         _myTransform = GetComponent<Transform>();
-        //_gameManager = GetComponent<GameManager>();
-
     }
     // Update is called once per frame
     void Update()
     {
-        _myTransform.Translate(Vector3.left * Time.deltaTime * _speed);
+        if (!GameManager.Instance.IsGameRunning)
+        {
+            this.enabled = false;
+        }
+            _myTransform.Translate(Vector3.left * Time.deltaTime * _speed);
     }
 }

@@ -24,6 +24,5 @@ public class LimitedTimeLife : MonoBehaviour
     void Start()
     {
         Invoke("SelfDestroy", _maxLifetime);
-
     }
 }

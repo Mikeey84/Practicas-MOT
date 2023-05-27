@@ -6,6 +6,8 @@ public class GameManager : MonoBehaviour
 {
 
     #region References
+    private static GameManager _instance;
+    public static GameManager Instance { get { return _instance; } }
     /// <summary>
     /// Reference to player
     /// </summary>
@@ -52,14 +54,19 @@ public class GameManager : MonoBehaviour
     private InputComponent _myInputManager;
     private void OnPlayerDies()
     {
+        _isGameRunning = false; 
         _UIManager.SendMessage("GameOver");
         _levelManager.SendMessage("GameOver");
         gameObject.SendMessage("Stop");
         _myInputManager.enabled = false;
     }
-    
-    
-        
+    public void Awake()
+    {
+        _instance = this;
+    }
+
+
+
     #endregion
     // Start is called before the first frame update
     void Start()
