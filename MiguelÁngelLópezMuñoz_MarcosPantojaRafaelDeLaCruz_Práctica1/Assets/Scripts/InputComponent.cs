@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class InputComponent : MonoBehaviour
 {
+    private float _cont;
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             //gameObject.SendMessage("Jump");
             GameManager.Instance.Jump();
@@ -17,4 +18,5 @@ public class InputComponent : MonoBehaviour
     {
         this.enabled = false; 
     }
+
 }

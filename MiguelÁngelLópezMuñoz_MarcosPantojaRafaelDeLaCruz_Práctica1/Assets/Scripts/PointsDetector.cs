@@ -9,7 +9,7 @@ public class PointsDetector : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.layer == _pointsLayer)
+        if(collision.gameObject.GetComponent<PointsMovement>())
         {
             GameManager.Instance.PointsSum();
         }

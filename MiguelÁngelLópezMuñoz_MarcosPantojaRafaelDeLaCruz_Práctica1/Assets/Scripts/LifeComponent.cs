@@ -11,7 +11,8 @@ public class LifeComponent : MonoBehaviour
     /// </summary>
     [SerializeField]
     private GameObject _gameManager;
-    
+
+    private LayerMask _layerMask;
     #endregion
     #region methods
     /// <summary>
@@ -19,9 +20,15 @@ public class LifeComponent : MonoBehaviour
     /// destroying itself.
     /// </summary>
     /// <param name="collision">Colliding element collision</param>
+    /// 
+
+    private void Start()
+    {
+        _layerMask = 9;
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.GetComponent<PolygonCollider2D>())
+        if(collision.gameObject.GetComponent<LateralMovementComponent>() || collision.gameObject.layer == _layerMask)
         {
             GameManager.Instance.OnPlayerDies();
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);

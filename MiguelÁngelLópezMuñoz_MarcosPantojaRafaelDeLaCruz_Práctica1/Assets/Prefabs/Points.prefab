@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 3115543500722290445}
   - component: {fileID: 583646962991851661}
   - component: {fileID: -7960946457543401544}
-  - component: {fileID: 3786783013698509420}
   - component: {fileID: 807576632549983718}
+  - component: {fileID: 4959660915691219609}
   m_Layer: 0
   m_Name: Points
   m_TagString: Untagged
@@ -100,19 +100,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 5
---- !u!114 &3786783013698509420
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8195562248398972401}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b32add8e93d646347b140c9bdd812a8e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _maxLifetime: 7
 --- !u!61 &807576632549983718
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -139,3 +126,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &4959660915691219609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8195562248398972401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a1f22d95a1686547a6f59d8dd503063, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxLifetime: 7
