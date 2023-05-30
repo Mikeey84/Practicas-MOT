@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LifeComponent : MonoBehaviour
 {
@@ -23,6 +24,7 @@ public class LifeComponent : MonoBehaviour
         if(collision.gameObject.GetComponent<PolygonCollider2D>())
         {
             GameManager.Instance.OnPlayerDies();
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             //_gameManager.SendMessage("OnPlayerDies");
             Destroy(gameObject);
         }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -57,15 +58,16 @@ public class GameManager : MonoBehaviour
     private InputComponent _myInputManager;
     public void OnPlayerDies()
     {
-        _isGameRunning = false;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        //_isGameRunning = false;
 
         //_UIManager.SendMessage("GameOver");
-        _UIManager.GetComponent<UIManager>().GameOver();
+        //_UIManager.GetComponent<UIManager>().GameOver();
         //_levelManager.SendMessage("GameOver");
-        _levelManager.GetComponent<LevelManager>().GameOver();
+        //_levelManager.GetComponent<LevelManager>().GameOver();
         //gameObject.SendMessage("Stop");
-        _obstacleGenerator.Stop();
-        _myInputManager.enabled = false;
+        //_obstacleGenerator.Stop();
+        //_myInputManager.enabled = false;
     }
     public void Awake()
     {
