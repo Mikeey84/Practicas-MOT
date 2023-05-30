@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class UIManager : MonoBehaviour
 {
@@ -11,6 +12,11 @@ public class UIManager : MonoBehaviour
     /// </summary>
     [SerializeField]
     private GameObject _gameOverObject;
+
+    float _pointsUI;
+
+    public TextMeshProUGUI _uiText;
+
     #endregion
     #region methods
     /// <summary>
@@ -20,10 +26,21 @@ public class UIManager : MonoBehaviour
     {
         _gameOverObject.SetActive(true);
     }
+    
     #endregion
     // Start is called before the first frame update
     void Start()
     {
         _gameOverObject.SetActive(false);
+        _uiText = GetComponent<TextMeshProUGUI>();
+        
+        
+    }
+    private void Update()
+    {
+         
+         _pointsUI = GameManager.Instance._points;
+         _uiText.text = _pointsUI.ToString("0");
+
     }
 }

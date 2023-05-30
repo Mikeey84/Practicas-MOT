@@ -40,7 +40,7 @@ public class GameManager : MonoBehaviour
             return _isGameRunning;
         }
     }
-    private float _points;
+    public float _points;
     #endregion
     #region methods
     /// <summary>
