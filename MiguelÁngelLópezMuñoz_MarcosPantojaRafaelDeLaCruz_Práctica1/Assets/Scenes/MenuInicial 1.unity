@@ -546,7 +546,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 963431868}
         m_TargetAssemblyTypeName: Menuinicial, Assembly-CSharp
-        m_MethodName: Play
+        m_MethodName: Retry
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

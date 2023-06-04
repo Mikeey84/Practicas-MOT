@@ -12,6 +12,7 @@ public class PointsDetector : MonoBehaviour
         if(collision.gameObject.GetComponent<PointsMovement>())
         {
             GameManager.Instance.PointsSum();
+            Debug.Log("puntsum");
         }
     }
 }

@@ -1225,7 +1225,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gameOverObject: {fileID: 0}
-  _uiText: {fileID: 0}
+  _uiText: {fileID: 1329861877}
 --- !u!114 &1329861877
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1435,9 +1435,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc548863ee749324da7b722995000c8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _ball: {fileID: 8284504240294718394, guid: c035cb746f9b64e4fad34708f27069d1, type: 3}
-  _Controller: {fileID: 0}
-  _maxBullets: 5
 --- !u!1 &1629672261
 GameObject:
   m_ObjectHideFlags: 0
@@ -1669,7 +1666,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gameOverObject: {fileID: 341484084}
-  _uiText: {fileID: 0}
+  _uiText: {fileID: 1329861877}
 --- !u!114 &1797100454
 MonoBehaviour:
   m_ObjectHideFlags: 0
